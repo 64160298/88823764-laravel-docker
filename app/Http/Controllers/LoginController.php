@@ -20,21 +20,7 @@ class LoginController extends MyController
     }
     function log(Request $request){
 
-        $validate = $request->validate([
-            'email' => 'required'
-        ]);
-
-        $data['firstname'] = $request->input('firstname', '');
-        $data['lastname'] = $request->input('lastname', '');
-        $data['email'] = $request->input('email', ' ');
-        $data['password'] = $request->input('password', 'ss');
-
-        DB::insert(
-            'INSERT INTO users (name,email,password) values(?,?,?)',
-            [$data['firstname']." ".$data['lastname'], $data['email'], $data['password']]
-        );
-
-        return redirect('/register');
+        return redirect('/login');
     }
 
     public function delete_user($id){
