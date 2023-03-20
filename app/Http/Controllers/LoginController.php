@@ -9,16 +9,16 @@ use Illuminate\Support\Facades\DB;
 class LoginController extends MyController
 {
     //
-    function index(){
+    function test(){
         $data['name'] = "this is my controller :";
 
         $users = DB::select('select * from users;');
         $data['users'] = $users;
 
-        return parent::output('form/register', $data);
+        return parent::output('form/login', $data);
 
     }
-    function create(Request $request){
+    function log(Request $request){
 
         $validate = $request->validate([
             'email' => 'required'
