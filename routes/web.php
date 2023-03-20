@@ -32,10 +32,12 @@ Route::post('/my-controller', function(){
 });
 
 Route::get('/register', [RegisterController::class, 'index']);
-
 Route::post('/register', [RegisterController::class, 'create']);
 
 Route::get('/delete_user/{id}   ',[RegisterController::class, 'delete_user']);
 
 Route::get('/edit_user/{id}', [RegisterController::class, 'edit']);
 Route::patch('/update', [RegisterController::class, 'save_edit']);
+
+Route::get('/login', [RegisterController::class, 'index']);
+Route::post('/login', [RegisterController::class, 'create']);
